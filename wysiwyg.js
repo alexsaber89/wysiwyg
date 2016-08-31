@@ -37,7 +37,8 @@ var userInput = document.getElementById("userInput");
 var container = document.getElementById("container");
 
 famousArray.forEach(function(element) {
-  container.innerHTML += `<person><header>${element.title} ${element.name}</header><br />`
-  container.innerHTML += `<section>${element.bio}<br /><br /><img src=${element.image}></section><br />`
-  container.innerHTML += `<footer>${element.lifespan.birth} - ${element.lifespan.death}</footer></person><br /><br />`
+  var people = `<person><header>${element.title} ${element.name}</header><br />`
+  people += `<section>${element.bio}<br /><br /><img src=${element.image}></section><br />`
+  people += `<footer>${element.lifespan.birth} - ${element.lifespan.death}</footer></person><br /><br />`
+  container.innerHTML += people;
 });
