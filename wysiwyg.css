@@ -3,6 +3,14 @@ img {
   height: 10%;
 }
 
+#input {
+  text-align: center;
+}
+
+#container {
+  display: flex;
+}
+
 person {
   display: block;
 }
