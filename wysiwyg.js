@@ -38,6 +38,6 @@ var container = document.getElementById("container");
 
 famousArray.forEach(function(element) {
   container.innerHTML += `<person><header>${element.title} ${element.name}</header><br />`
-  container.innerHTML += `<section>${element.bio}<br /><img src=${element.image}></section><br />`
+  container.innerHTML += `<section>${element.bio}<br /><br /><img src=${element.image}></section><br />`
   container.innerHTML += `<footer>${element.lifespan.birth} - ${element.lifespan.death}</footer></person><br /><br />`
 });
