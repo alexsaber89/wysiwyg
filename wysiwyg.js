@@ -40,7 +40,7 @@ var counter = 0;
 for (; counter < famousArray.length; counter++) {
   // Give each person element a unique identifier
   var people = `<person class="person__container" id="person--${counter}"><header>${famousArray[counter].title} ${famousArray[counter].name}</header><br />`
-  people += `<section>${famousArray[counter].bio}<br /><br /><img src=${famousArray[counter].image}></section><br />`
+  people += `<section><p class="bio">${famousArray[counter].bio}</p><br /><br /><img src=${famousArray[counter].image}></section><br />`
   people += `<footer>${famousArray[counter].lifespan.birth} - ${famousArray[counter].lifespan.death}</footer></person><br /><br />`
   container.innerHTML += people;
 }
@@ -53,9 +53,29 @@ for (var i = 0; i < containerEl.length; i++) {
   containerEl[i].addEventListener("click", borderFunction);
 };
 
+var clickedBio = "";
+
 function borderFunction() {
   for (var j = 0; j < containerEl.length; j++) {
-  containerEl[j].classList.remove("personBorder");
+    containerEl[j].classList.remove("personBorder");
   }
   event.currentTarget.classList.add("personBorder");
+  userInput.focus();
+  clickedBio = event.currentTarget;
 }
+
+userInput.addEventListener("keyup",setBio);
+
+function setBio() {
+  var bioText = clickedBio.querySelector(".bio");
+  bioText.innerHTML = userInput.value;
+}
+
+userInput.addEventListener("keyup",clearUserInput);
+
+function clearUserInput(event) {
+  event.preventDefault();
+  if (event.keyCode == 13) {
+    userInput.value = "";
+  }
+};
