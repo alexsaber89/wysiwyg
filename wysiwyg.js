@@ -36,9 +36,23 @@ var famousArray = [
 var userInput = document.getElementById("userInput");
 var container = document.getElementById("container");
 
-famousArray.forEach(function(element) {
-  var people = `<person><header>${element.title} ${element.name}</header><br />`
-  people += `<section>${element.bio}<br /><br /><img src=${element.image}></section><br />`
-  people += `<footer>${element.lifespan.birth} - ${element.lifespan.death}</footer></person><br /><br />`
+var counter = 0;
+for (; counter < famousArray.length; counter++) {
+  // Give each person element a unique identifier
+  var people = `<person class="person__container" id="person--${counter}"><header>${famousArray[counter].title} ${famousArray[counter].name}</header><br />`
+  people += `<section>${famousArray[counter].bio}<br /><br /><img src=${famousArray[counter].image}></section><br />`
+  people += `<footer>${famousArray[counter].lifespan.birth} - ${famousArray[counter].lifespan.death}</footer></person><br /><br />`
   container.innerHTML += people;
-});
+}
+
+// Now containerEl will have elements in it
+var containerEl = document.getElementsByClassName("person__container");
+
+// Event listeners are created
+for (var i = 0; i < containerEl.length; i++) {
+  containerEl[i].addEventListener("click", borderFunction);
+};
+
+function borderFunction(element) {
+  console.log("test");
+}

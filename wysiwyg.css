@@ -14,9 +14,20 @@ img {
 }
 
 person {
-  border: 1px solid grey;
   width: 30%;
   flex-grow: 1;
+}
+
+.personBorder {
+  border: 1px dotted grey;
+}
+
+person:nth-of-type(odd) {
+    background-color: lightblue;
+}
+
+person:nth-of-type(even) {
+    background: lightyellow;
 }
 
 header {
