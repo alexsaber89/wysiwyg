@@ -1,0 +1,44 @@
+img {
+  width: 20%;
+  height: 20%;
+  display: flex;
+  margin: 0 auto;
+}
+
+#input {
+  text-align: center;
+}
+
+#container {
+  display: flex;
+}
+
+person {
+  width: 30%;
+  flex-grow: 1;
+}
+
+.personBorder {
+  border: 1px dotted grey;
+}
+
+person:nth-of-type(odd) {
+    background-color: lightblue;
+}
+
+person:nth-of-type(even) {
+    background: lightyellow;
+}
+
+header {
+  text-align: center;
+}
+
+section {
+  text-align: justify;
+  padding: 0 10px;
+}
+
+footer {
+  text-align: center;
+}
