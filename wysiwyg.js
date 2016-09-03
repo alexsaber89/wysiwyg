@@ -53,6 +53,6 @@ for (var i = 0; i < containerEl.length; i++) {
   containerEl[i].addEventListener("click", borderFunction);
 };
 
-function borderFunction(element) {
-  console.log("test");
+function borderFunction() {
+  event.target.classList.add("personBorder");
 }
