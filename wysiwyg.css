@@ -1,6 +1,8 @@
 img {
   width: 10%;
   height: 10%;
+  display: flex;
+  margin: 0 auto;
 }
 
 #input {
@@ -12,5 +14,20 @@ img {
 }
 
 person {
-  display: block;
+  border: 1px solid grey;
+  width: 30%;
+  flex-grow: 1;
+}
+
+header {
+  text-align: center;
+}
+
+section {
+  text-align: justify;
+  padding: 0 10px;
+}
+
+footer {
+  text-align: center;
 }
