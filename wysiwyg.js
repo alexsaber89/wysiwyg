@@ -54,5 +54,8 @@ for (var i = 0; i < containerEl.length; i++) {
 };
 
 function borderFunction() {
-  event.target.classList.add("personBorder");
+  for (var j = 0; j < containerEl.length; j++) {
+  containerEl[j].classList.remove("personBorder");
+  }
+  event.currentTarget.classList.add("personBorder");
 }
